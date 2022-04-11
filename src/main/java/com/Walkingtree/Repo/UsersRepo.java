@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.Walkingtree.Entity.Users;
 @Service
 public interface UsersRepo extends JpaRepository<Users, Integer> {
+	
 
 
 }

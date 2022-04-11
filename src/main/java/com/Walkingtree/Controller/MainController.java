@@ -32,6 +32,7 @@ public class MainController {
 		return employeeRepository.save(emp);
 	}
 	
+	
 	@PostMapping("/us")
 	public Users saveUsers(@RequestBody Users us) {
 		return usersRepo.save(us);
