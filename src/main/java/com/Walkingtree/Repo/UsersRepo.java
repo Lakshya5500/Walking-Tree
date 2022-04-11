@@ -4,10 +4,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import org.springframework.stereotype.Service;
 
-import com.Walkingtree.Entity.Employee;
+import com.Walkingtree.Entity.Users;
 @Service
-public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
-	
-	
+public interface UsersRepo extends JpaRepository<Users, Integer> {
+
 
 }

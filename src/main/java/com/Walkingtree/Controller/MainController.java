@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Walkingtree.Entity.Employee;
+import com.Walkingtree.Entity.Users;
 import com.Walkingtree.Repo.EmployeeRepository;
+import com.Walkingtree.Repo.UsersRepo;
 
 @RestController
 public class MainController {
@@ -17,11 +19,10 @@ public class MainController {
 	@Autowired
 	EmployeeRepository employeeRepository;
 	
+	@Autowired
+	UsersRepo usersRepo;
 	
-	@GetMapping("/")
-	public String home() {
-		return "Welcome to WalkingTree Technologies, Agra";
-	}
+	
 	@GetMapping("/employees")
 	public List<Employee> EmpDetails() {
 		return employeeRepository.findAll();
@@ -31,5 +32,8 @@ public class MainController {
 		return employeeRepository.save(emp);
 	}
 	
-	
+	@PostMapping("/us")
+	public Users saveUsers(@RequestBody Users us) {
+		return usersRepo.save(us);
+	}
 }

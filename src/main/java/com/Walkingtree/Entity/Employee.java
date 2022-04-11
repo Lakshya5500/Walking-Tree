@@ -9,6 +9,7 @@ import javax.persistence.Table;
 public class Employee {
 
 	@Id
+	
 	int id;
 	String name;
 	String dept;

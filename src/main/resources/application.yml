@@ -4,11 +4,13 @@ spring:
     username: lakshya 
     password: laks@5500
   
-    
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
       
      
 server:
