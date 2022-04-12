@@ -3,252 +3,199 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+* {
+	font-family: "Poppins";
+}
+
 body {
-	margin: 0;
-	color: #6a6f8c;
-	background: #c8c8c8;
-	font: 600 16px/18px 'Open Sans', sans-serif;
-	background: url(img/photo5.png);
-	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	overflow-y: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #dde5f4;
+	height: 100vh;
 }
 
-*, :after, :before {
-	box-sizing: border-box
+.screen-1 {
+	background: #f1f7fe;
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	border-radius: 30px;
+	box-shadow: 0 0 2em #e6e9f9;
+	gap: 2em;
 }
 
-.clearfix:after, .clearfix:before {
-	content: '';
-	display: table
+.screen-1 .logo {
+	margin-top: -3em;
 }
 
-.clearfix:after {
-	clear: both;
-	display: block
+.screen-1 .email {
+	background: white;
+	box-shadow: 0 0 2em #e6e9f9;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+	border-radius: 20px;
+	color: #4d4d4d;
+	margin-top: -3em;
 }
 
-a {
-	color: inherit;
-	text-decoration: none
-}
-
-.login-wrap {
-	width: 100%;
-	margin: auto;
-	max-width: 525px;
-	min-height: 670px;
-	position: relative;
-	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0
-		rgba(0, 0, 0, .19);
-	top: 100px;
-}
-
-.login-html {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	padding: 90px 70px 50px 70px;
-	background: rgba(49 87 88);
-	opacity: 0.9;
-}
-
-.login-html .sign-in-htm, .login-html .sign-up-htm {
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	position: absolute;
-	transform: rotateY(180deg);
-	backface-visibility: hidden;
-	transition: all .4s linear;
-}
-
-.login-html .sign-in, .login-html .sign-up, .login-form .group .check {
-	display: none;
-}
-
-.login-html .tab, .login-form .group .label, .login-form .group .button
-	{
-	text-transform: uppercase;
-}
-
-.login-html .tab {
-	font-size: 22px;
-	margin-right: 15px;
-	padding-bottom: 5px;
-	margin: 0 15px 10px 0;
-	display: inline-block;
-	border-bottom: 2px solid transparent;
-}
-
-.login-html .sign-in:checked+.tab, .login-html .sign-up:checked+.tab {
-	color: #fff;
-	border-color: #1161ee;
-}
-
-.login-form {
-	min-height: 345px;
-	position: relative;
-	perspective: 1000px;
-	transform-style: preserve-3d;
-}
-
-.login-form .group {
-	margin-bottom: 15px;
-}
-
-.login-form .group .label, .login-form .group .input, .login-form .group .button
-	{
-	width: 100%;
-	color: #fff;
-	display: block;
-}
-
-.login-form .group .input, .login-form .group .button {
+.screen-1 .email input {
+	outline: none;
 	border: none;
-	padding: 15px 20px;
-	border-radius: 25px;
-	background: rgba(255, 255, 255, .1);
 }
 
-.login-form .group input[data-type="password"] {
-	text-security: circle;
-	-webkit-text-security: circle;
+.screen-1 .email input::-moz-placeholder {
+	color: black;
+	font-size: 0.9em;
 }
 
-.login-form .group .label {
-	color: #aaa;
-	font-size: 12px;
+.screen-1 .email input:-ms-input-placeholder {
+	color: black;
+	font-size: 0.9em;
 }
 
-.login-form .group .button {
-	background: #1161ee;
+.screen-1 .email input::placeholder {
+	color: black;
+	font-size: 0.9em;
 }
 
-.login-form .group label .icon {
-	width: 15px;
-	height: 15px;
-	border-radius: 2px;
-	position: relative;
-	display: inline-block;
-	background: rgba(255, 255, 255, .1);
+.screen-1 .email ion-icon {
+	color: #4d4d4d;
+	margin-bottom: -0.2em;
 }
 
-.login-form .group label .icon:before, .login-form .group label .icon:after
-	{
-	content: '';
-	width: 10px;
-	height: 2px;
-	background: #fff;
-	position: absolute;
-	transition: all .2s ease-in-out 0s;
+.screen-1 .password {
+	background: white;
+	box-shadow: 0 0 2em #e6e9f9;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+	border-radius: 20px;
+	color: #4d4d4d;
 }
 
-.login-form .group label .icon:before {
-	left: 3px;
-	width: 5px;
-	bottom: 6px;
-	transform: scale(0) rotate(0);
+.screen-1 .password input {
+	outline: none;
+	border: none;
 }
 
-.login-form .group label .icon:after {
-	top: 6px;
-	right: 0;
-	transform: scale(0) rotate(0);
+.screen-1 .password input::-moz-placeholder {
+	color: black;
+	font-size: 0.9em;
 }
 
-.login-form .group .check:checked+label {
-	color: #fff;
+.screen-1 .password input:-ms-input-placeholder {
+	color: black;
+	font-size: 0.9em;
 }
 
-.login-form .group .check:checked+label .icon {
-	background: #1161ee;
+.screen-1 .password input::placeholder {
+	color: black;
+	font-size: 0.9em;
 }
 
-.login-form .group .check:checked+label .icon:before {
-	transform: scale(1) rotate(45deg);
+.screen-1 .password ion-icon {
+	color: #4d4d4d;
+	margin-bottom: -0.2em;
 }
 
-.login-form .group .check:checked+label .icon:after {
-	transform: scale(1) rotate(-45deg);
+.screen-1 .password .show-hide {
+	margin-right: -5em;
 }
 
-.login-html .sign-in:checked+.tab+.sign-up+.tab+.login-form .sign-in-htm
-	{
-	transform: rotate(0);
+.screen-1 .login {
+	padding: 1em;
+	background: #3e4684;
+	color: white;
+	border: none;
+	border-radius: 30px;
+	font-weight: 600;
 }
 
-.login-html .sign-up:checked+.tab+.login-form .sign-up-htm {
-	transform: rotate(0);
+.screen-1 .footer {
+	display: flex;
+	font-size: 0.7em;
+	color: #5e5e5e;
+	gap: 14em;
+	padding-bottom: 10em;
 }
 
-.hr {
-	height: 2px;
-	margin: 60px 0 50px 0;
-	background: rgba(255, 255, 255, .2);
+.screen-1 .footer span {
+	cursor: pointer;
 }
 
-.foot-lnk {
-	text-align: center;
+button {
+	cursor: pointer;
 }
 </style>
 </head>
 <body>
-	<div class="login-wrap">
-		<div class="login-html">
-			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label
-				for="tab-1" class="tab">Admin</label> <input id="tab-2" type="radio"
-				name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
-			<div class="login-form">
-			<form action="/login" method="post">
-				<div class="sign-in-htm">
-					<div class="group">
-						<label for="user" class="label">Username</label> <input 
-							type="text" class="input" name="username">
-					</div>
-					<div class="group">
-						<label for="pass" class="label">Password</label> <input 
-							type="password" class="input" name="pass">
-					</div>
-					
-					<div class="group">
-						<input type="submit" class="button" value="Login">
-					</div>
-					<div class="hr"></div>
-					<div class="foot-lnk">
-						<a href="#">Forgot Password?</a>
-					</div>
+	<form action="/login" method="post">
+		<div class="screen-1">
+			<svg class="logo" xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="300"
+				height="300" viewbox="0 0 640 480" xml:space="preserve">
+    <g transform="matrix(3.31 0 0 3.31 320.4 240.4)">
+      <circle
+					style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(61,71,133); fill-rule: nonzero; opacity: 1;"
+					cx="0" cy="0" r="40"></circle>
+    </g>
+    <g transform="matrix(0.98 0 0 0.98 268.7 213.7)">
+      <circle
+					style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+					cx="0" cy="0" r="40"></circle>
+    </g>
+    <g transform="matrix(1.01 0 0 1.01 362.9 210.9)">
+      <circle
+					style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+					cx="0" cy="0" r="40"></circle>
+    </g>
+    <g transform="matrix(0.92 0 0 0.92 318.5 286.5)">
+      <circle
+					style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+					cx="0" cy="0" r="40"></circle>
+    </g>
+    <g transform="matrix(0.16 -0.12 0.49 0.66 290.57 243.57)">
+      <polygon
+					style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+					points="-50,-50 -50,50 50,50 50,-50 "></polygon>
+    </g>
+    <g transform="matrix(0.16 0.1 -0.44 0.69 342.03 248.34)">
+      <polygon
+					style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+					vector-effect="non-scaling-stroke"
+					points="-50,-50 -50,50 50,50 50,-50 "></polygon>
+    </g>
+  </svg>
+			<div class="email">
+				<label for="email">Email Address</label>
+				<div class="sec-2">
+					<ion-icon name="mail-outline"></ion-icon>
+					<input type="email" name="email" placeholder="USERNAME" />
 				</div>
-				</form>
-				<!-- <form action="/" method="get" >
-				<div class="sign-up-htm">
-					<div class="group">
-						<label for="pass" class="label">Employee Id </label> 
-						<input type="number" class="input" name="id">
-					</div>
-					<div class="group">
-						<label for="user" class="label">Username</label> <input id="user"
-							type="text" class="input">
-					</div>
-					<div class="group">
-						<label for="pass" class="label">Password</label> <input id="pass"
-							type="password" class="input" data-type="password">
-					</div>
-
-					<div class="group">
-                        <label for="pass" class="label">Email Address</label>
-                        <input id="pass" type="text" class="input">
-                    </div>
-					<div class="group">
-						<input type="submit" class="button" value="Login">
-					</div>
-					<div class="hr"></div>
-					<div class="foot-lnk">
-						<label for="tab-1">Add Member?</a>
-					</div>
+			</div>
+			<div class="password">
+				<label for="password">Password</label>
+				<div class="sec-2">
+					<ion-icon name="lock-closed-outline"></ion-icon>
+					<input class="pas" type="password" name="password"
+						placeholder="* * * * * * * *" />
+					<ion-icon class="show-hide" name="eye-outline"></ion-icon>
 				</div>
-				</form> -->
+			</div>
+			<button class="login">Login</button>
+			<div class="footer">
+				
 			</div>
 		</div>
-	</div>
+	</form>
 </body>
 </html>
