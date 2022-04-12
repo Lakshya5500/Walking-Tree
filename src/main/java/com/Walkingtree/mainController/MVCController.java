@@ -2,6 +2,8 @@ package com.Walkingtree.mainController;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +18,7 @@ public class MVCController {
 
 	@Autowired
 	EmployeeRepository employeeRepository;
-	
+
 	@Autowired
 	UsersRepo usersRepo;
 
@@ -26,10 +28,30 @@ public class MVCController {
 	}
 
 	@RequestMapping(value = "/login")
-	public String login(Model m) {
-		List<Employee> ad = employeeRepository.findAll();
-		m.addAttribute("ad", ad);
-		return "login";
+	public String login(Model m, HttpServletRequest req) {
 
+		int pass = Integer.parseInt(req.getParameter("password"));
+		if (pass == 1234) {
+			List<Employee> ad = employeeRepository.findAll();
+			m.addAttribute("ad", ad);
+			return "login";
+		} else {
+
+			return "wrongpage";
+		}
+
+	}
+	
+	@RequestMapping("/wrongpage")
+	public String wrongpage(Model m, HttpServletRequest req) {
+		int pass = Integer.parseInt(req.getParameter("password"));
+		if (pass == 1234) {
+			List<Employee> ad = employeeRepository.findAll();
+			m.addAttribute("ad", ad);
+			return "login";
+		} else {
+
+			return "wrongpage";
+		}
 	}
 }

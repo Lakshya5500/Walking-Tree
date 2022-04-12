@@ -14,7 +14,16 @@ public class Employee {
 	String name;
 	String dept;
 	String salary;
+	String team;
 	public Employee() {
+	}
+	public Employee(int id, String name, String dept, String salary, String team) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.dept = dept;
+		this.salary = salary;
+		this.team = team;
 	}
 	public int getId() {
 		return id;
@@ -40,17 +49,16 @@ public class Employee {
 	public void setSalary(String salary) {
 		this.salary = salary;
 	}
-	public Employee(int id, String name, String dept, String salary) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.dept = dept;
-		this.salary = salary;
+	public String getTeam() {
+		return team;
+	}
+	public void setTeam(String team) {
+		this.team = team;
 	}
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", dept=" + dept + ", salary=" + salary + "]";
+		return "Employee [id=" + id + ", name=" + name + ", dept=" + dept + ", salary=" + salary + ", team=" + team
+				+ "]";
 	}
-	
-	
+
 }
